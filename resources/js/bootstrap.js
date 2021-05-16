@@ -11,6 +11,8 @@ try {
     window.$ = window.jQuery = require('jquery');
 
     require('bootstrap');
+
+    require('overlayscrollbars/js/jquery.overlayScrollbars');
 } catch (e) {}
 
 /**
@@ -22,6 +24,14 @@ try {
 window.axios = require('axios');
 
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+
+// AdminLTE
+// require('datatables.net')();
+// require('datatables.net-bs4')();
+// require('sweetalert2');
+// require('select2');
+// require('pace-js');
+require('./adminlte');
 
 /**
  * Echo exposes an expressive API for subscribing to channels and listening
