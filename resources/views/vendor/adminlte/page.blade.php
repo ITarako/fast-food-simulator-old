@@ -37,8 +37,10 @@
 
             {{-- Content Header --}}
             <div class="content-header">
+                @include('adminlte::messages.messages')
+
                 <div class="{{ config('adminlte.classes_content_header') ?: $def_container_class }}">
-                    @yield('content_header')
+                    <h1>@yield('content_header')</h1>
                 </div>
             </div>
 

@@ -23,9 +23,7 @@
     @yield('adminlte_css_pre')
 
     {{-- Base Stylesheets --}}
-    @if(config('adminlte.enabled_laravel_mix'))
-        <link rel="stylesheet" href="{{ mix(config('adminlte.laravel_mix_css_path', 'css/app.css')) }}">
-    @endif
+    <link rel="stylesheet" href="{{ mix(config('adminlte.laravel_mix_css_path', 'css/app.css')) }}">
 
     {{-- Custom Stylesheets (post AdminLTE) --}}
     @yield('adminlte_css')
@@ -61,9 +59,7 @@
     @yield('body')
 
     {{-- Base Scripts --}}
-    @if(config('adminlte.enabled_laravel_mix'))
-        <script src="{{ mix(config('adminlte.laravel_mix_js_path', 'js/app.js')) }}"></script>
-    @endif
+    <script src="{{ mix(config('adminlte.laravel_mix_js_path', 'js/app.js')) }}"></script>
 
     {{-- Custom Scripts --}}
     @yield('adminlte_js')
