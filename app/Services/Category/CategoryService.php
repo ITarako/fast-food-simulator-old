@@ -4,22 +4,36 @@ namespace App\Services\Category;
 
 use App\Models\Category\Category;
 
+/**
+ * Class CategoryService
+ * @package App\Services\Category
+ * @property-read CategoryRepository $categoryRepository
+ */
 class CategoryService
 {
-    public function store($data)
+    protected CategoryRepository $categoryRepository;
+
+    /**
+     * CategoryService constructor.
+     * @param CategoryRepository $categoryRepository
+     */
+    public function __construct(CategoryRepository $categoryRepository)
     {
-        $category = new Category();
-        $category->create($data);
-        return $category;
+        $this->categoryRepository = $categoryRepository;
     }
 
-    public function update(Category $category, $data)
+    public function store($data): Category
     {
-        $category->update($data);
-        return $category;
+        return $this->categoryRepository->createFormArray($data);
     }
 
-    public function destroy(Category $category) {
-        return $category->delete();
+    public function update(Category $category, $data): Category
+    {
+        return $this->categoryRepository->updateFromArray($category, $data);
+    }
+
+    public function destroy(Category $category): ?bool
+    {
+        return $this->categoryRepository->delete($category);
     }
 }

@@ -19,7 +19,8 @@
             </div>
         </div>
         <div class="card-footer">
-            <a href="{{route('admin.category.edit', ['category' => $category])}}" class="btn btn-primary">Редактировать</a>
+            <a href="{{route('admin.category.edit', ['category' => $category])}}"
+               class="btn btn-primary">Редактировать</a>
         </div>
-
+    </div>
 @endsection

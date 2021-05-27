@@ -8,9 +8,14 @@ use App\Http\Controllers\Controller;
 use App\Models\Category\Category;
 use App\Services\Category\CategoryService;
 
+/**
+ * Class CategoryController
+ * @package App\Http\Controllers\Admin\Category
+ * @property-read CategoryService $categoryService
+ */
 class CategoryController extends Controller
 {
-    private $categoryService;
+    private CategoryService $categoryService;
 
     /**
      * CategoryController constructor.
