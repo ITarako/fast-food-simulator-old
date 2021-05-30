@@ -3,6 +3,7 @@
 namespace App\Services\Category;
 
 use App\Models\Category\Category;
+use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 
 /**
  * Class CategoryRepository
@@ -10,16 +11,14 @@ use App\Models\Category\Category;
  */
 class CategoryRepository
 {
-    /**
-     * @param int $id
-     * @return Category
-     */
-    public function find(int $id): Category
+    public function find(int $id): ?Category
     {
-        return Category::find($id);
+        /** @var Category|null $model */
+        $model = Category::find($id);
+        return $model;
     }
 
-    public function search(array $filters = [])
+    public function search(array $filters = []): LengthAwarePaginator
     {
         return Category::paginate();
     }
