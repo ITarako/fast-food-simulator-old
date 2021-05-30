@@ -22,12 +22,12 @@ class CategoryService
         $this->categoryRepository = $categoryRepository;
     }
 
-    public function store($data): Category
+    public function store(array $data): Category
     {
         return $this->categoryRepository->createFormArray($data);
     }
 
-    public function update(Category $category, $data): Category
+    public function update(Category $category, array $data): Category
     {
         return $this->categoryRepository->updateFromArray($category, $data);
     }

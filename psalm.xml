@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<psalm
+    errorLevel="1"
+    resolveFromConfigFile="true"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="https://getpsalm.org/schema/config"
+    xsi:schemaLocation="https://getpsalm.org/schema/config vendor/vimeo/psalm/config.xsd"
+>
+    <projectFiles>
+        <directory name="app"/>
+        <ignoreFiles>
+            <directory name="bootstrap"/>
+            <directory name="config"/>
+            <directory name="database"/>
+            <directory name="deploy"/>
+            <directory name="node_modules"/>
+            <directory name="public"/>
+            <directory name="resources"/>
+            <directory name="routes"/>
+            <directory name="storage"/>
+            <directory name="tests"/>
+            <directory name="vendor"/>
+            <file name=".phpstorm.meta.php"/>
+            <file name="_ide_helper.php"/>
+            <file name="server.php"/>
+        </ignoreFiles>
+    </projectFiles>
+    <plugins>
+        <pluginClass class="Psalm\LaravelPlugin\Plugin"/>
+    </plugins>
+    <issueHandlers>
+        <PropertyNotSetInConstructor errorLevel="suppress" />
+    </issueHandlers>
+</psalm>

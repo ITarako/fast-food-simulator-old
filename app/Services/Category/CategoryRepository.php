@@ -10,7 +10,11 @@ use App\Models\Category\Category;
  */
 class CategoryRepository
 {
-    public function find(int $id)
+    /**
+     * @param int $id
+     * @return Category
+     */
+    public function find(int $id): Category
     {
         return Category::find($id);
     }
