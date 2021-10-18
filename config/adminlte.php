@@ -241,6 +241,12 @@ return [
 //            'label'       => 4,
 //            'label_color' => 'success',
         ],
+        [
+            'text'        => 'Продукты',
+            'url'         => 'admin/product',
+            'icon'        => 'fas fa-utensils',
+            'active' => ['admin/product*']
+        ],
         ['header' => 'account_settings'],
         [
             'text' => 'profile',

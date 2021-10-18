@@ -23,4 +23,5 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::group(['namespace' => 'App\Http\Controllers\Admin', 'prefix' => 'admin', 'as' => 'admin.'], function() {
     Route::resource('category', 'Category\CategoryController');
+    Route::resource('product', 'Product\ProductController');
 });
